@@ -3,17 +3,21 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+using TMPro;
+
 using Photon.Pun;
 using Photon.Realtime;
 
 public class MyPlayerNameInputField : MonoBehaviour
 {
+
     #region PRIVATE CONSTANTS
 
     //Store the PlayerPref Key to avoid typos
     const string playerNamePrefKey = "PlayerName";
 
     #endregion
+
 
     #region MONOBEHAVIOUR CALLBACKS
 
@@ -23,10 +27,11 @@ public class MyPlayerNameInputField : MonoBehaviour
     private void Start()
     {
         string defaultName = string.Empty;
-        InputField _inputField = this.GetComponent<InputField>();
+        TMP_InputField _inputField = GetComponent<TMP_InputField>();
         if (_inputField == null)
         {
-            gameObject.AddComponent<MyPlayerNameInputField>();
+            gameObject.AddComponent<TMP_InputField>();
+            _inputField = GetComponent<TMP_InputField>();
         }
 
         if (_inputField != null)
@@ -43,12 +48,13 @@ public class MyPlayerNameInputField : MonoBehaviour
 
     #endregion
 
+
     #region PUBLIC METHODS
 
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="value">The name of the Player</param>
+    /// <param PlayerName="value">The name of the Player</param>
     public void SetPlayerName(string value)
     {
         // #Important
@@ -62,8 +68,6 @@ public class MyPlayerNameInputField : MonoBehaviour
 
         PlayerPrefs.SetString(playerNamePrefKey, value);
     }
-
-    
 
     #endregion
 
