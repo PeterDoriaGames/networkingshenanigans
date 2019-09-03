@@ -41,7 +41,7 @@ public class MyLauncher : MonoBehaviourPunCallbacks
     /// </summary>
     private void Start()
     {
-        Connect();
+
     }
 
     #endregion
