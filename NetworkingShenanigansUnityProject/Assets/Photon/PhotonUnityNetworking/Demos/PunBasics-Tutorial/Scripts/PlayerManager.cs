@@ -46,7 +46,7 @@ namespace Photon.Pun.Demo.PunBasics
 
         #endregion
 
-        #region MonoBehaviour CallBacks
+        #region UNITY CallBacks
 
         /// <summary>
         /// MonoBehaviour method called on GameObject by Unity during early initialization phase.

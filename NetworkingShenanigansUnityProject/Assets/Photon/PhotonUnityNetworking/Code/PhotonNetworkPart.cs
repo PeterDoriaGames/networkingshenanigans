@@ -1885,7 +1885,7 @@ namespace Photon.Pun
         /// <summary>Internally used to detect the current scene and load it if PhotonNetwork.AutomaticallySyncScene is enabled.</summary>
         internal static void LoadLevelIfSynced()
         {
-            if (!PhotonNetwork.AutomaticallySyncScene || PhotonNetwork.IsMasterClient || PhotonNetwork.CurrentRoom == null)
+            if (!PhotonNetwork.ShouldAutomaticallySyncScene || PhotonNetwork.IsMasterClient || PhotonNetwork.CurrentRoom == null)
             {
                 return;
             }
@@ -1917,7 +1917,7 @@ namespace Photon.Pun
 
         internal static void SetLevelInPropsIfSynced(object levelId)
         {
-            if (!PhotonNetwork.AutomaticallySyncScene || !PhotonNetwork.IsMasterClient || PhotonNetwork.CurrentRoom == null)
+            if (!PhotonNetwork.ShouldAutomaticallySyncScene || !PhotonNetwork.IsMasterClient || PhotonNetwork.CurrentRoom == null)
             {
                 return;
             }

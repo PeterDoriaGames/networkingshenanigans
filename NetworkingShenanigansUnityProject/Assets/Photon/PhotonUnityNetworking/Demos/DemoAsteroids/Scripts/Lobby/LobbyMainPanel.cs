@@ -45,7 +45,7 @@ namespace Photon.Pun.Demo.Asteroids
 
         public void Awake()
         {
-            PhotonNetwork.AutomaticallySyncScene = true;
+            PhotonNetwork.ShouldAutomaticallySyncScene = true;
 
             cachedRoomList = new Dictionary<string, RoomInfo>();
             roomListEntries = new Dictionary<string, GameObject>();

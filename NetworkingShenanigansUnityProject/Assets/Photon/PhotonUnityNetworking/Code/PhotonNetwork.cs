@@ -466,7 +466,7 @@ namespace Photon.Pun
         /// The Master Client will actually reload a scene but other clients won't.
         /// To get everyone to reload, the game can send an RPC or event to trigger the loading.
         /// </remarks>
-        public static bool AutomaticallySyncScene
+        public static bool ShouldAutomaticallySyncScene
         {
             get
             {
@@ -2867,7 +2867,7 @@ namespace Photon.Pun
         /// </param>
         public static void LoadLevel(int levelNumber)
         {
-            if (PhotonNetwork.AutomaticallySyncScene)
+            if (PhotonNetwork.ShouldAutomaticallySyncScene)
             {
                 SetLevelInPropsIfSynced(levelNumber);
             }
@@ -2904,7 +2904,7 @@ namespace Photon.Pun
         /// </param>
         public static void LoadLevel(string levelName)
         {
-            if (PhotonNetwork.AutomaticallySyncScene)
+            if (PhotonNetwork.ShouldAutomaticallySyncScene)
             {
                 SetLevelInPropsIfSynced(levelName);
             }

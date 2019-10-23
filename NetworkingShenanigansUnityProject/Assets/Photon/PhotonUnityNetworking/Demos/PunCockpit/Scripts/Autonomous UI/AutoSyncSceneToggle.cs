@@ -45,16 +45,16 @@ namespace Photon.Pun.Demo.Cockpit
         void Update()
         {
 
-			if (PhotonNetwork.AutomaticallySyncScene != _toggle.isOn)
+			if (PhotonNetwork.ShouldAutomaticallySyncScene != _toggle.isOn)
             {
-				_toggle.isOn = PhotonNetwork.AutomaticallySyncScene;
+				_toggle.isOn = PhotonNetwork.ShouldAutomaticallySyncScene;
             }
         }
 
 
         public void ToggleValue(bool value)
         {
-			PhotonNetwork.AutomaticallySyncScene = value;
+			PhotonNetwork.ShouldAutomaticallySyncScene = value;
             //Debug.Log("PhotonNetwork.CrcCheckEnabled = " + PhotonNetwork.CrcCheckEnabled, this);
         }
     }
